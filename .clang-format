@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+Language: C
+IndentWidth: 4
+ContinuationIndentWidth: 4
+TabWidth: 2
+UseTab: Never
+ColumnLimit: 80
+BreakBeforeBraces: Attach
+PointerAlignment: Left
+DerivePointerAlignment: false
+AlignAfterOpenBracket: Align
+BinPackArguments: true
+BinPackParameters: true
+AllowShortFunctionsOnASingleLine: Empty
+SortIncludes: true
+IncludeBlocks: Preserve
