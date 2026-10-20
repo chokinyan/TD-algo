@@ -55,3 +55,37 @@ void delete_index(array* arr, unsigned long index) {
 
     arr->size--;
 }
+
+void edit(array* arr, unsigned long index, long long value) {
+    if (index >= arr->size)
+        return;
+
+    arr->data[index] = value;
+}
+
+bool is_sorted_increasing(array* arr) {
+
+    for (unsigned long i = 0; i < arr->size - 1; i++) {
+        if (get(arr, i) >= get(arr, i + 1))
+            return false;
+    }
+    return true;
+}
+
+void swap_int(array* arr, unsigned long first, unsigned long second) {
+    long long val1 = get(arr, first);
+    long long val2 = get(arr, second);
+    edit(arr, first, val2);
+    edit(arr, second, val1);
+}
+
+array copy_array(array* arr) {
+    array new_arr;
+
+    new_arr.capacity = arr->capacity;
+    new_arr.size = arr->size;
+    new_arr.data = malloc(sizeof(long long) * new_arr.capacity);
+    memcpy(new_arr.data, arr->data, new_arr.capacity * sizeof(long long));
+
+    return new_arr;
+}
